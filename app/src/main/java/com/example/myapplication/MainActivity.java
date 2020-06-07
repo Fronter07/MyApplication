@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ListAdapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
-    private static final String BASE_URL = "https://pokeapi.co/";
+    private static final String BASE_URL = "https://raw.githubusercontent.com/Fronter07/LoL-Champions/master/";
     private SharedPreferences sharedPreferences;
     private Gson gson;
 
@@ -51,11 +51,11 @@ public class MainActivity extends AppCompatActivity {
 
         List<Pokemon> pokemonList = getDataFromCache();
 
-        if(pokemonList != null){
-            showList(pokemonList);
-        } else {
+        //if(pokemonList != null){
+        //    showList(pokemonList);
+       // } else {
             makeApiCall();
-        }
+        //}
     }
 
     private List<Pokemon> getDataFromCache() {
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        mAdapter = new ListAdapter(pokemonList);
+        mAdapter = new ListAdapter(pokemonList, MainActivity.this);
         recyclerView.setAdapter(mAdapter);
     }
 
@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showError() {
-        //Enculé de Zach
+
         Toast.makeText(getApplicationContext(), "API ERROR", Toast.LENGTH_SHORT).show();
     }
 }

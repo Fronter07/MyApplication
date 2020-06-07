@@ -3,6 +3,8 @@ package com.example.myapplication;
 public class Pokemon {
     private String name;
     private String url;
+    private String position;
+    private String icon;
 
     public String getName() {
         return name;
@@ -10,5 +12,13 @@ public class Pokemon {
 
     public String getUrl() {
         return url;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public String getIcon() {
+        return icon;
     }
 }
