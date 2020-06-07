@@ -4,7 +4,7 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface PokeAPI {
-    @GET("/api/v2/pokemon")
+    @GET("champions.json")
     Call<RestPokemonResponse> getPokemonResponse();
 
     @GET("/api/v2/ability")
