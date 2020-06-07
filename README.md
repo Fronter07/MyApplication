@@ -2,35 +2,21 @@
 
 Je suis un joueur très fréquent du jeu vidéo League Of Legends. C'est un jeu très compliqué car il demande une grande connaissance des personnages présent dans le jeu ainsi que de l'environnement dans lequel ces personnages évoluent. Des camarades à moi m'ont demandé il y a peu de les "initier" au jeu pour qu'ils puissent s'améliorer plus rapidement. C'est pour cette raison que j'ai l'idée de créer cette application.
 
-## Getting Started
+## Présentation du Projet
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Cette application affiche la liste des champions disponible dans le jeu en utilisant une API que j'ai créer moi-même "champion.json"
 
-### Prerequisites
+### Prérequis
 
-What things you need to install the software and how to install them
+* Installation d'Android Studio 
 
-```
-Give examples
-```
+### Consignes respectées
 
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
+* Ecran avec une liste d'éléments
+* Ecran avec le détail d'un élément
+* Appel Webservice à une API Rest
+* Stockage de données en cache
+* Gitflow
 
 ## Running the tests
 
