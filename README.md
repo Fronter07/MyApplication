@@ -36,3 +36,5 @@ Affichage de la liste des personnages du jeu
 Explicatif du personnage selectionné avec son niveau de jouabilité (difficulté) ainsi que ses compétances
 
 <img width="320" alt="Capture d’écran 2020-06-07 à 22 46 11" src="https://user-images.githubusercontent.com/62753715/83980031-b4708580-a912-11ea-8f3d-f80371c6243c.png">
+
+* PS : Je rempli les caractéritsiques des 20 premiers personnages
