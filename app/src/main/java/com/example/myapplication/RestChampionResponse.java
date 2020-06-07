@@ -4,15 +4,15 @@ import java.util.List;
 
 public class RestChampionResponse {
     private int count;
-    private String next;
+    private String competance;
     private List<Champion> results;
 
     public int getCount() {
         return count;
     }
 
-    public String getNext() {
-        return next;
+    public String getCompetance() {
+        return competance;
     }
 
     public List<Champion> getResults() {

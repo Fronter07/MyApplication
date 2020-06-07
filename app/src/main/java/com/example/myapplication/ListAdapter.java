@@ -81,8 +81,17 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             public void onClick(View v) {
                 //openNewActivity();
                 Intent intent = new Intent(context, SecondActivity.class);
+
                 intent.putExtra("name", currentChampion.getName());
                 intent.putExtra("position", currentChampion.getPosition());
+                intent.putExtra("difficulty", currentChampion.getDifficulty());
+                intent.putExtra("competance", currentChampion.getCompetance());
+                intent.putExtra("passif", currentChampion.getPassif());
+                intent.putExtra("spell_Q", currentChampion.getSpell_Q());
+                intent.putExtra("spell_Z", currentChampion.getSpell_Z());
+                intent.putExtra("spell_E", currentChampion.getSpell_E());
+                intent.putExtra("spell_R", currentChampion.getSpell_R());
+
                 context.startActivity(intent);
             }
         });
