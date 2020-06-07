@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="TextView"
-        android:textSize="40sp"
+        android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -107,7 +107,7 @@
         android:layout_marginLeft="50dp"
         android:layout_marginBottom="50dp"
         android:text="TextView"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toTopOf="@+id/imageChampion"
         app:layout_constraintStart_toStartOf="parent" />
@@ -120,64 +120,9 @@
         android:layout_marginRight="50dp"
         android:layout_marginBottom="50dp"
         android:text="TextView"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toTopOf="@+id/imageChampion"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/descriptionPassif"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginBottom="20dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/spell_Q"
-        app:layout_constraintStart_toEndOf="@+id/passif" />
-
-    <TextView
-        android:id="@+id/descriptionQ"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginBottom="20dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/spell_Z"
-        app:layout_constraintStart_toEndOf="@+id/spell_Q" />
-
-    <TextView
-        android:id="@+id/descriptionZ"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginBottom="20dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/spell_E"
-        app:layout_constraintStart_toEndOf="@+id/spell_Z" />
-
-    <TextView
-        android:id="@+id/descriptionE"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginBottom="20dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/spell_R"
-        app:layout_constraintStart_toEndOf="@+id/spell_E" />
-
-    <TextView
-        android:id="@+id/descriptionR"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-        android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/spell_R"
-        app:layout_constraintTop_toBottomOf="@+id/descriptionE" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

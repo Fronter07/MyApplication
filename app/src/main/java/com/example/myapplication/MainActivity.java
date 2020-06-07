@@ -4,25 +4,18 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Toast;
 
 import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -49,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 .setLenient()
                 .create();
 
-        List<Pokemon> pokemonList = getDataFromCache();
+        List<Champion> championList = getDataFromCache();
 
         //if(pokemonList != null){
         //    showList(pokemonList);
@@ -58,19 +51,19 @@ public class MainActivity extends AppCompatActivity {
         //}
     }
 
-    private List<Pokemon> getDataFromCache() {
+    private List<Champion> getDataFromCache() {
         String jsonPokemon = sharedPreferences.getString(Constants.KEY_POKEMON_LIST, null);
 
         if(jsonPokemon == null){
             return null;
         } else {
-            Type listType = new TypeToken<List<Pokemon>>(){}.getType();
+            Type listType = new TypeToken<List<Champion>>(){}.getType();
             return gson.fromJson(jsonPokemon, listType);
 
         }
     }
 
-    private void showList(List<Pokemon> pokemonList) {
+    private void showList(List<Champion> championList) {
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         final SwipeRefreshLayout swiperefresh = findViewById(R.id.swiperefresh);
         swiperefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -83,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        mAdapter = new ListAdapter(pokemonList, MainActivity.this);
+        mAdapter = new ListAdapter(championList, MainActivity.this);
         recyclerView.setAdapter(mAdapter);
     }
 
@@ -95,31 +88,31 @@ public class MainActivity extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 
-        PokeAPI pokeAPI = retrofit.create(PokeAPI.class);
+        ChampionAPI championAPI = retrofit.create(ChampionAPI.class);
 
-        Call<RestPokemonResponse> call = pokeAPI.getPokemonResponse();
-        call.enqueue(new Callback<RestPokemonResponse>() {
+        Call<RestChampionResponse> call = championAPI.getPokemonResponse();
+        call.enqueue(new Callback<RestChampionResponse>() {
             @Override
-            public void onResponse(Call<RestPokemonResponse> call, Response<RestPokemonResponse> response) {
+            public void onResponse(Call<RestChampionResponse> call, Response<RestChampionResponse> response) {
                 if(response.isSuccessful() && response.body() != null) {
-                    List<Pokemon> pokemonList = response.body().getResults();
+                    List<Champion> championList = response.body().getResults();
                     Toast.makeText(getApplicationContext(), "API SUCCESS", Toast.LENGTH_SHORT).show();
-                    saveList(pokemonList);
-                    showList(pokemonList);
+                    saveList(championList);
+                    showList(championList);
                 } else {
                     showError();
                 }
             }
 
             @Override
-            public void onFailure(Call<RestPokemonResponse> call, Throwable t) {
+            public void onFailure(Call<RestChampionResponse> call, Throwable t) {
                 showError();
             }
         });
     }
 
-    private void saveList(List<Pokemon> pokemonList) {
-        String jsonString = gson.toJson(pokemonList);
+    private void saveList(List<Champion> championList) {
+        String jsonString = gson.toJson(championList);
         sharedPreferences
                 .edit()
                 .putString(Constants.KEY_POKEMON_LIST, jsonString)
