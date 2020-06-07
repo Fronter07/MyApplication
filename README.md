@@ -8,7 +8,11 @@ Cette application affiche la liste des champions disponible dans le jeu en utili
 
 ### Prérequis
 
-* Installation d'Android Studio 
+* Installation d'Android Studio
+* Récupérer une API Rest
+```
+https://github.com/Fronter07/MyApplication/champion.json
+```
 
 ### Consignes respectées
 
@@ -18,17 +22,12 @@ Cette application affiche la liste des champions disponible dans le jeu en utili
 * Stockage de données en cache
 * Gitflow
 
-## Running the tests
+## Fonctionnalités
 
-Explain how to run the automated tests for this system
+### Premier Ecran
 
-### Break down into end to end tests
+Affichage de la liste des personnages du jeu
 
-Explain what these tests test and why
-
-```
-Give an example
-```
 
 ### And coding style tests
 
