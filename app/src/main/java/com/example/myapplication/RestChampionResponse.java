@@ -2,10 +2,10 @@ package com.example.myapplication;
 
 import java.util.List;
 
-public class RestPokemonResponse {
+public class RestChampionResponse {
     private int count;
     private String next;
-    private List<Pokemon> results;
+    private List<Champion> results;
 
     public int getCount() {
         return count;
@@ -15,7 +15,7 @@ public class RestPokemonResponse {
         return next;
     }
 
-    public List<Pokemon> getResults() {
+    public List<Champion> getResults() {
         return results;
     }
 }

@@ -3,10 +3,10 @@ package com.example.myapplication;
 import retrofit2.Call;
 import retrofit2.http.GET;
 
-public interface PokeAPI {
+public interface ChampionAPI {
     @GET("champions.json")
-    Call<RestPokemonResponse> getPokemonResponse();
+    Call<RestChampionResponse> getPokemonResponse();
 
     @GET("/api/v2/ability")
-    Call<RestPokemonResponse> getAbility();
+    Call<RestChampionResponse> getAbility();
 }

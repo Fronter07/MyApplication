@@ -1,6 +1,6 @@
 package com.example.myapplication;
 
-public class Pokemon {
+public class Champion {
     private String name;
     private String url;
     private String position;

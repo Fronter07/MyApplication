@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -16,7 +15,7 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
-    private List<Pokemon> values;
+    private List<Champion> values;
     private Context context;
 
     // Provide a reference to the views for each data item
@@ -38,7 +37,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         }
     }
 
-    public void add(int position, Pokemon item) {
+    public void add(int position, Champion item) {
         values.add(position, item);
         notifyItemInserted(position);
     }
@@ -49,7 +48,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public ListAdapter(List<Pokemon> myDataset, Context activity) {
+    public ListAdapter(List<Champion> myDataset, Context activity) {
         values = myDataset;
         context = activity;
     }
@@ -73,17 +72,17 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        final Pokemon currentPokemon = values.get(position);
-        holder.txtHeader.setText(currentPokemon.getName());
-        holder.txtFooter.setText(currentPokemon.getPosition());
-        Glide.with(holder.itemView.getContext()).load(currentPokemon.getIcon()).into(holder.iconChampion);
+        final Champion currentChampion = values.get(position);
+        holder.txtHeader.setText(currentChampion.getName());
+        holder.txtFooter.setText(currentChampion.getPosition());
+        Glide.with(holder.itemView.getContext()).load(currentChampion.getIcon()).into(holder.iconChampion);
         holder.txtHeader.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //openNewActivity();
                 Intent intent = new Intent(context, SecondActivity.class);
-                intent.putExtra("name", currentPokemon.getName());
-                intent.putExtra("position", currentPokemon.getPosition());
+                intent.putExtra("name", currentChampion.getName());
+                intent.putExtra("position", currentChampion.getPosition());
                 context.startActivity(intent);
             }
         });
